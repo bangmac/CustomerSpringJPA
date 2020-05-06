@@ -56,7 +56,6 @@ public class ApplicationConfig extends WebMvcConfigurerAdapter implements Applic
         this.applicationContext = applicationContext;
     }
 
-
     @Bean
     public CustomerService customerService(){
         return new CustomerServiceImpl();
