@@ -7,13 +7,19 @@ import java.util.List;
 @Table(name = "provinces")
 public class Province {
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
 
     private String name;
 
     @OneToMany(targetEntity = Customer.class)
     private List<Customer> customers;
+
+    public Province(Long id, String name, List<Customer> customers) {
+        this.id = id;
+        this.name = name;
+        this.customers = customers;
+    }
 
     public Province() {
     }
