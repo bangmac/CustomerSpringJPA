@@ -21,7 +21,8 @@ public class Province {
     public void setCustomers(List<Customer> customers) {
         this.customers = customers;
     }
-
+    // đối tượng được tao thông qua contructor sau đó đưa vào database
+    // đối tượng được lấy ra khỏi database thông qua getter setter
 
     public Province(Long id, String name, List<Customer> customers) {
         this.id = id;
