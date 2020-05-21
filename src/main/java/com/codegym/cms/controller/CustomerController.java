@@ -33,7 +33,7 @@ public class CustomerController {
         return modelAndView;
     }
 
-    @PostMapping("/create-customer")
+    @PostMapping("/create")
     public ModelAndView saveCustomer(@ModelAttribute("customer") Customer customer){
         customerService.save(customer);
         ModelAndView modelAndView = new ModelAndView("/customer/create");

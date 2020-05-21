@@ -15,6 +15,14 @@ public class Customer {
     @ManyToOne
     @JoinColumn(name = "province_id")
     private Province province;
+    public Province getProvince() {
+        return province;
+    }
+    public void setProvince(Province province) {
+        this.province = province;
+    }
+
+//    https://huongdanjava.com/vi/su-dung-annotation-onetomany-trong-jpa.html
 
     public Customer() {}
 
@@ -58,11 +66,4 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    public Province getProvince() {
-        return province;
     }
-
-    public void setProvince(Province province) {
-        this.province = province;
-    }
-}

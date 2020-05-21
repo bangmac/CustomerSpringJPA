@@ -9,11 +9,19 @@ public class Province {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-
     private String name;
 
     @OneToMany(targetEntity = Customer.class)
     private List<Customer> customers;
+    // muốn xuất findById bên nào thì đặt List bên đó,
+    // hibernate sẽ tự động truy xuất dữ liệu từ cả 2 nếu đặt List cả 2 bên
+    public List<Customer> getCustomers() {
+        return customers;
+    }
+    public void setCustomers(List<Customer> customers) {
+        this.customers = customers;
+    }
+
 
     public Province(Long id, String name, List<Customer> customers) {
         this.id = id;
@@ -44,11 +52,4 @@ public class Province {
         this.name = name;
     }
 
-    public List<Customer> getCustomers() {
-        return customers;
     }
-
-    public void setCustomers(List<Customer> customers) {
-        this.customers = customers;
-    }
-}
